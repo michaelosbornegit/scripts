@@ -6,4 +6,4 @@ docker run -d \
     -e PGADMIN_DEFAULT_PASSWORD=password \
     -v pgadmin:/var/lib/pgadmin \
     -p 7654:80 \
-    dpage/pgadmin4
+    dpage/pgadmin4:latest
