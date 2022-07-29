@@ -1,5 +1,7 @@
 #!/bin/bash
 
+docker pull postgres:latest
+docker volume create postgres
 docker run -d \
     --name postgres \
     -e POSTGRES_PASSWORD=password \
