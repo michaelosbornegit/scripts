@@ -86,7 +86,6 @@ class SSD1306(framebuf.FrameBuffer):
         self.write_cmd(SET_NORM_INV | (invert & 1))
 
     def show(self):
-        self.fill(0) # <<<<<<<< I DID THIS CHANGE BACK IF THIS IS BAD
         x0 = 0
         x1 = self.width - 1
         if self.width == 64:
