@@ -27,4 +27,3 @@ while True:
         printToScreenRaw(f'CO2 (PPM): {co2}\nTemp (F):\n{temp}\nHumidity (%):\n{humidity}')
     except Exception as err:
         print(err)
-        printToScreenRaw('Error:\nerr')
