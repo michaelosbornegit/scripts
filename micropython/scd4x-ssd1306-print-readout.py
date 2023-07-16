@@ -3,7 +3,7 @@ import time
 import ssd1306
 import scd4x
 
-i2c = I2C(0,sda=Pin(0), scl=Pin(1), freq=100000)
+i2c = I2C(0,sda=Pin(0), scl=Pin(1))
 display = ssd1306.SSD1306_I2C(128, 64, i2c)
 sensor = scd4x.SCD4X(i2c)
 sensor.start_periodic_measurement()
