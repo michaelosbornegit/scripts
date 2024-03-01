@@ -2,6 +2,9 @@
 
 docker pull postgres:latest
 docker volume create postgres
+docker stop postgres
+docker rm postgres
+
 docker run -d \
     --name postgres \
     -e POSTGRES_PASSWORD=postgres \

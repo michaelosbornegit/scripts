@@ -2,6 +2,9 @@
 
 docker pull dpage/pgadmin4:latest
 docker volume create pgadmin
+docker stop pgadmin
+docker rm pgadmin
+
 docker run -d \
     --name pgadmin4 \
     -e PGADMIN_DEFAULT_EMAIL=test@test.com \
