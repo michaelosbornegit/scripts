@@ -99,6 +99,39 @@ class SSD1306(framebuf.FrameBuffer):
         self.write_cmd(0)
         self.write_cmd(self.pages - 1)
         self.write_data(self.buffer)
+    
+    def printToScreenBreakLines(self, content, centered = False):
+        self.fill(0)
+        splitOnNewlines = content.split('\n')
+        lineCounter = 0
+        for line in splitOnNewlines:
+            currentLine = ''
+            lineLengthCounter = 0
+            split = line.split()
+            for word in split:
+                wordSpace = f'{word} '
+                lineLengthCounter += len(wordSpace)
+                if (lineLengthCounter > 16):
+                    self.text(f'{currentLine : ^16}' if centered else currentLine, 0, lineCounter * 12, 1)
+                    lineCounter += 1
+                    currentLine = wordSpace
+                    lineLengthCounter = len(wordSpace)
+                else:
+                    currentLine += wordSpace
+            self.text(f'{currentLine : ^16}' if centered else currentLine, 0, lineCounter * 12, 1)
+            lineCounter += 1
+                
+        self.show()
+
+    def printToScreenRaw(self, content, centered = False):
+        self.fill(0)
+        split = content.split('\n')
+        lineCounter = 0
+        for line in split:
+            self.text(f'{line : ^16}' if centered else line, 0, lineCounter * 12, 1)
+            lineCounter += 1
+            
+        self.show()
 
 
 class SSD1306_I2C(SSD1306):
