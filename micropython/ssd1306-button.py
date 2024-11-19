@@ -22,7 +22,6 @@ def button_pressed(event):
 
 def main():
     displayOne.printToScreenBreakLines('Press the button', True)
-    print('hi!')
     while True:
         time.sleep(1)
 

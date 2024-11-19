@@ -132,6 +132,10 @@ class SSD1306(framebuf.FrameBuffer):
             lineCounter += 1
             
         self.show()
+    
+    def whiteScreen(self):
+        self.fill(1)
+        self.show()
 
 
 class SSD1306_I2C(SSD1306):
