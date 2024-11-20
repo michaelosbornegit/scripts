@@ -5,7 +5,6 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/nix:1": {
-      "flakeUri": "/tmp/flake.nix",
       "extraNixConfig": "experimental-features = nix-command flakes"
     }
   },

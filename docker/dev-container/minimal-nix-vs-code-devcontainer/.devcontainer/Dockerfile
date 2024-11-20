@@ -7,7 +7,6 @@ RUN apt update && apt install -y \
     direnv
 
 COPY zsh-setup.sh /tmp/zsh-setup.sh
-COPY flake.nix /tmp/flake.nix
 
 # Install dependencies required for Nix
 # USER root
