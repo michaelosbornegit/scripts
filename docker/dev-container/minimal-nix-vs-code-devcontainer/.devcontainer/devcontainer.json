@@ -5,9 +5,10 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/nix:1": {
-      "version": "2.25.2"
+      "flakeUri": "/tmp/flake.nix",
+      "extraNixConfig": "experimental-features = nix-command flakes"
     }
-  }
+  },
   // "customizations": {
   //   "vscode": {
   //     "settings": {
@@ -22,6 +23,7 @@
   //     ]
   //   }
   // },
-  // "postStartCommand": "direnv allow",
+  "postStartCommand": "direnv allow",
+  "postCreateCommand": "bash /tmp/zsh-setup.sh",
   // "remoteUser": "vscode"
 }

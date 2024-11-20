@@ -13,6 +13,8 @@
         pkgs = import nixpkgs { inherit system; };
       in pkgs.mkShell {
         buildInputs = with pkgs; [
+          zsh
+          nodejs_20
           # htop
           # nodejs_20
           # python3

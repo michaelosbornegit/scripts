@@ -1,7 +1,13 @@
 # Use the official VS Code Alpine base image
 # FROM mcr.microsoft.com/vscode/devcontainers/base:alpine
 # Maybe someday..
-FROM ubuntu:latest
+FROM debian:stable-slim
+
+RUN apt update && apt install -y \
+    direnv
+
+COPY zsh-setup.sh /tmp/zsh-setup.sh
+COPY flake.nix /tmp/flake.nix
 
 # Install dependencies required for Nix
 # USER root
@@ -26,18 +32,6 @@ FROM ubuntu:latest
 # # Set environment variables for Nix
 # ENV NIX_PATH=/home/vscode/.nix-defexpr/channels
 # ENV PATH=/home/vscode/.nix-profile/bin:/home/vscode/.nix-profile/sbin:$PATH
-
-# # Add Znap for zsh dependencies
-# RUN echo '[[ -r ~/Repos/znap/znap.zsh ]] || git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/Repos/znap' >> /home/vscode/.zshrc && \
-#     echo 'source ~/Repos/znap/znap.zsh' >> /home/vscode/.zshrc
-
-# # Add zsh plugins
-# RUN echo 'znap source marlonrichert/zsh-autocomplete' >> /home/vscode/.zshrc && \
-#     echo 'znap source zsh-users/zsh-autosuggestions' >> /home/vscode/.zshrc && \
-#     echo 'znap source zsh-users/zsh-syntax-highlighting' >> /home/vscode/.zshrc
-
-# # Add direnv to zsh
-# RUN echo 'eval "$(direnv hook zsh)"' >> /home/vscode/.zshrc
 
 # # Set the working directory
 # WORKDIR /workspace
