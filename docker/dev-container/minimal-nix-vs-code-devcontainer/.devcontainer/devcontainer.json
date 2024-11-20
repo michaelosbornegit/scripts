@@ -1,0 +1,27 @@
+{
+  "name": "Nix Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/nix:1": {
+      "version": "2.25.2"
+    }
+  }
+  // "customizations": {
+  //   "vscode": {
+  //     "settings": {
+  //       "terminal.integrated.defaultProfile.linux": "zsh"
+  //     },
+  //     "extensions": [
+  //       // "figma.figma-vscode-extension",
+  //       // "github.vscode-pull-request-github",
+  //       // "eamodio.gitlens",
+  //       // "mechatroner.rainbow-csv",
+  //       // "firsttris.vscode-jest-runner"
+  //     ]
+  //   }
+  // },
+  // "postStartCommand": "direnv allow",
+  // "remoteUser": "vscode"
+}

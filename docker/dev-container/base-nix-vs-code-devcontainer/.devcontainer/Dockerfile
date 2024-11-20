@@ -1,7 +1,5 @@
-# Use the official VS Code Alpine base image
-FROM mcr.microsoft.com/vscode/devcontainers/base:alpine
-# Maybe someday..
-# FROM alpine:latest
+# Based on alpine vscode devcontainer https://github.com/devcontainers/images/tree/main/src/base-alpine
+FROM alpine:latest
 
 # Install dependencies required for Nix
 USER root
