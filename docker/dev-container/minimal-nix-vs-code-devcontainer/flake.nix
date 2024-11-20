@@ -2,7 +2,7 @@
   description = "A basic flake supporting linux and mac";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
   };
 
   outputs = { self, nixpkgs, ... }:
@@ -10,17 +10,23 @@
       lib = nixpkgs.lib;
       systems = [ "aarch64-linux" "x86_64-linux" ];
       devShellForSystem = system: let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs { 
+          inherit system; 
+          # config.allowUnfree = true; # Needed for terraform
+        };
       in pkgs.mkShell {
         buildInputs = with pkgs; [
           zsh
           nodejs_20
           # htop
-          # nodejs_20
+          # jdk8
           # python3
           # docker
-          # azure-cli
+          azure-cli
           # terraform
+          # dotnet-sdk_8
+          # neo-cowsay
+          gh
         ];
       };
     in

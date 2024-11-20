@@ -1,5 +1,5 @@
 # Based on alpine vscode devcontainer https://github.com/devcontainers/images/tree/main/src/base-alpine
-FROM alpine:latest
+FROM mcr.microsoft.com/vscode/devcontainers/base:alpine
 
 # Install dependencies required for Nix
 USER root

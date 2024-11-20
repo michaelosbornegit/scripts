@@ -6,7 +6,7 @@ FROM debian:stable-slim
 RUN apt update && apt install -y \
     direnv
 
-COPY zsh-setup.sh /tmp/zsh-setup.sh
+COPY post-install-setup.sh /tmp/post-install-setup.sh
 
 # Install dependencies required for Nix
 # USER root
