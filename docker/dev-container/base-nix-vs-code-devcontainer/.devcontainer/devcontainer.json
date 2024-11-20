@@ -9,10 +9,14 @@
         "terminal.integrated.defaultProfile.linux": "zsh"
       },
       "extensions": [
+        // "figma.figma-vscode-extension",
+        // "github.vscode-pull-request-github",
+        // "eamodio.gitlens",
+        // "mechatroner.rainbow-csv",
+        // "firsttris.vscode-jest-runner"
       ]
     }
   },
-  "runArgs": [],
   "postStartCommand": "direnv allow",
   "remoteUser": "vscode"
 }

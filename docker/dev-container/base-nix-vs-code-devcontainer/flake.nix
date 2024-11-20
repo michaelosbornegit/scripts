@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake supporting multiple systems";
+  description = "A basic flake supporting linux and mac";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-23.05";
@@ -12,8 +12,13 @@
       devShellForSystem = system: let
         pkgs = import nixpkgs { inherit system; };
       in pkgs.mkShell {
-        buildInputs = [
-          pkgs.nodejs_20
+        buildInputs = with pkgs; [
+          # htop
+          # nodejs_20
+          # python3
+          # docker
+          # azure-cli
+          # terraform
         ];
       };
     in
