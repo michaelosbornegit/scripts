@@ -8,6 +8,7 @@
       "extraNixConfig": "experimental-features = nix-command flakes"
     }
   },
+  "mounts": ["type=bind,source=/dev/bus/usb,target=/dev/bus/usb"],
   "customizations": {
     "vscode": {
       "extensions": [
@@ -15,5 +16,5 @@
       ]
     }
   },
-  "postCreateCommand": "direnv allow && nix develop --command bash /tmp/post-install-setup.sh"
+  "postCreateCommand": "chown -R root /workspaces && direnv allow && nix develop --command bash /tmp/post-install-setup.sh"
 }
