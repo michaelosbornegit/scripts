@@ -1,5 +1,5 @@
 {
-  "name": "scripts",
+  "name": "NAME_REPLACE_ME",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -8,19 +8,13 @@
       "extraNixConfig": "experimental-features = nix-command flakes"
     }
   },
-  // can't get to work in a container, but potentially super cool
-  // "mounts": ["type=bind,source=/dev/bus/usb,target=/dev/bus/usb"],
   "customizations": {
     "vscode": {
       "extensions": [
-        "mkhl.direnv",
-        // can't get to work in a container, but potentially super cool
-        // "paulober.pico-w-go",
-        "ms-python.python",
-        "eamodio.gitlens"
+        "mkhl.direnv"
       ]
     }
   },
-  "runArgs": ["--name", "scripts_devcontainer"],
+  "runArgs": ["--name", "NAME_REPLACE_ME_devcontainer"],
   "postCreateCommand": "chown -R root /workspaces && direnv allow && nix develop --command bash /tmp/post-install-setup.sh"
 }

@@ -17,10 +17,10 @@
       in pkgs.mkShell {
         buildInputs = with pkgs; [
           zsh
+          python3
           # nodejs_20
           # htop
           # jdk8
-          # python3
           # docker
           # azure-cli
           # terraform
