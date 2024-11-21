@@ -10,20 +10,10 @@
   },
   "customizations": {
     "vscode": {
-      "settings": {
-        // "terminal.integrated.defaultProfile.linux": "bash"
-        // "direnv.restart.automatic": true
-      },
       "extensions": [
-        // "figma.figma-vscode-extension",
-        // "github.vscode-pull-request-github",
-        // "eamodio.gitlens",
-        // "mechatroner.rainbow-csv",
-        // "firsttris.vscode-jest-runner"
         "mkhl.direnv"
       ]
     }
   },
-  // "postStartCommand": "direnv allow",
-  "postCreateCommand": "direnv allow && nix develop --command bash /tmp/post-install-setup.sh",
+  "postCreateCommand": "direnv allow && nix develop --command bash /tmp/post-install-setup.sh"
 }
