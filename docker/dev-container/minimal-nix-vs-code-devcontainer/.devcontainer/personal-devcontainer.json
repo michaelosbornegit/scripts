@@ -21,7 +21,7 @@
           "**/*.sass",
           "**/*.less",
           "**/*.styl"
-      ]
+        ]
       },
       "extensions": [
         "mkhl.direnv",
@@ -34,5 +34,6 @@
       ]
     }
   },
-  "postCreateCommand": "direnv allow && nix develop --command bash /tmp/post-install-setup.sh"
+  "postCreateCommand": "direnv allow . && nix develop --command bash /tmp/post-install-setup.sh",
+  "remoteUser": "vscode"
 }
