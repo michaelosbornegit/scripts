@@ -18,7 +18,7 @@ RUN chown vscode:vscode /tmp/post-install-setup.sh && \
 
 USER vscode
 
-RUN git config --global --add safe.directory /workspace
+RUN git config --global --add safe.directory /workspaces/*
 
 # Set the working directory
-WORKDIR /workspace
+WORKDIR /workspaces

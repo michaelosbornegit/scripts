@@ -16,5 +16,6 @@
     }
   },
   "runArgs": ["--name", "NAME_REPLACE_ME_devcontainer"],
-  "postCreateCommand": "chown -R root /workspaces && direnv allow && nix develop --command bash /tmp/post-install-setup.sh"
+  "postCreateCommand": "direnv allow . && nix develop --command bash /tmp/post-install-setup.sh",
+  "remoteUser": "vscode"
 }
