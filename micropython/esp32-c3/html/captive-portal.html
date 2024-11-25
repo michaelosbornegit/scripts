@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to ESP32 Captive Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { 
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f8ff; 
+            font-family: Arial, sans-serif; 
+        }
+        h1 { color: #333; }
+        form { 
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            max-width: 300px; 
+            width: 100%; 
+            background-color: #fff; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type=text], input[type=password] { 
+            width: 80%; 
+            padding: 10px; 
+            margin: 5px 0 15px 0; 
+            border: none; 
+            background: #f1f1f1; 
+            border-radius: 5px;
+        }
+        input[type=submit] { 
+            width: 80%; 
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 5px;
+        }
+        input[type=submit]:hover { 
+            background-color: #45a049; 
+        }
+        .emoji { font-size: 48px; }
+    </style>
+</head>
+<body>
+    <div class="emoji">🚀</div>
+    <h1>Set up Desk Buddy!</h1>
+    <form action="/" method="post">
+        <label for="username">WiFi Name</label><br />
+        <input type="text" id="username" name="username" required/><br />
+        <label for="password">WiFi Password</label><br />
+        <input type="password" id="password" name="password" required/><br />
+        <input type="submit" value="Login" />
+    </form>
+</body>
+</html>

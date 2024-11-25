@@ -1,0 +1,5 @@
+// ran in powershell
+
+esptool --chip esp32c3 erase_flash
+
+esptool --chip esp32c3 --baud 460800 write_flash -z 0x0 ./micropython/esp32-c3/firmware/ESP32_GENERIC_C3-20241025-v1.24.0.bin
