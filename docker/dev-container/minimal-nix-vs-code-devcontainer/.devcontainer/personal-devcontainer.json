@@ -21,7 +21,10 @@
           "**/*.sass",
           "**/*.less",
           "**/*.styl"
-        ]
+        ],
+        "settings": {
+          "terminal.integrated.defaultProfile.linux": "zsh"
+        }
       },
       "extensions": [
         "mkhl.direnv",
