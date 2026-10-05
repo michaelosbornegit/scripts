@@ -62,10 +62,11 @@ def draw_sparkline(fb, x, y, w, h, history, lo, hi, color=1):
 def render(fb, co2, temp_f, humidity, history, width=128, height=64):
     fb.fill(0)
 
-    # Header
-    fb.fill_rect(0, 0, width, 10, 1)
+    # Header (outline text, not a filled bar, to avoid a static full-brightness
+    # block that would burn in faster than the rest of the panel)
     title = 'CO2 MONITOR'
-    fb.text(title, (width - len(title) * 8) // 2, 1, 0)
+    fb.text(title, (width - len(title) * 8) // 2, 1, 1)
+    fb.hline(0, 10, width, 1)
 
     # Big CO2 number + ppm label, centered as a group
     num_w = number_width(co2)
